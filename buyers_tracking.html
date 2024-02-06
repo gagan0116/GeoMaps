@@ -36,15 +36,7 @@
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     });
     osm.addTo(map);
-
-    if(!navigator.geolocation) {
-        console.log("Your browser doesn't support geolocation feature!")
-    } else {
-        setInterval(() => {
-            navigator.geolocation.getCurrentPosition(getPosition)
-        }, 5000);
-    }
-
+    
     var marker, circle;
 
     function getPosition(position){
