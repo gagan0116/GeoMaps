@@ -66,6 +66,21 @@
 
         console.log("Your coordinate is: Lat: "+ lat +" Long: "+ long+ " Accuracy: "+ accuracy)
     }
+
+    function handleLocationError(error) {
+        console.error("Error getting location:", error.message);
+    }
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(getPosition, handleLocationError, {
+            enableHighAccuracy: true,
+            maximumAge: 0,
+            timeout: 5000
+        });
+    } else {
+        console.log("Geolocation is not supported by this browser.");
+    }
+
 </script>
 </body>
 </html>
