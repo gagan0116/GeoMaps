@@ -70,8 +70,8 @@
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(getPosition, handleLocationError, {
             enableHighAccuracy: true,
-            maximumAge: 0,
-            timeout: 10000
+            maximumAge: Infinity,
+            timeout: 2000
         });
     } else {
         console.log("Geolocation is not supported by this browser.");
